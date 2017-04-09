@@ -37,7 +37,7 @@ namespace sequel_rails_namespace do
         load(file)
         ::Sequel::Migration.descendants.each { |m| m.apply(db_for_current_env, :up) }
       else
-        abort '#{file} doesn\'t exist yet. Run \'rake #{sequel_rails_namespace}:migrate\' to create it, then try again.'
+        abort "#{file} doesn't exist yet. Run 'rake #{sequel_rails_namespace}:migrate' to create it, then try again."
       end
     end
   end
