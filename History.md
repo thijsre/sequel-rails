@@ -1,3 +1,9 @@
+dev
+===
+
+* Fix string interpolation syntax in error message for db:migrate task (Henre Botha)
+  [#133](https://github.com/TalentBox/sequel-rails/issues/133)
+
 0.9.14 (2016-08-15)
 ===================
 
