@@ -7,8 +7,9 @@ rvm:
   - 1.9.3
   - 2.0.0
   - 2.1.10
-  - 2.2.5
-  - 2.3.1
+  - 2.2.6
+  - 2.3.3
+  - 2.4.0
   - jruby-18mode
   - jruby-19mode
   - jruby-9.0.5.0
@@ -33,13 +34,15 @@ matrix:
     - rvm: jruby-9.1.8.0
       gemfile: ci/rails-5.0.gemfile
   exclude:
-    - rvm: 2.2.4
+    - rvm: 2.2.6
       gemfile: ci/rails-3.2.gemfile
-    - rvm: 2.3.0
+    - rvm: 2.3.3
+      gemfile: ci/rails-3.2.gemfile
+    - rvm: 2.4.0
       gemfile: ci/rails-3.2.gemfile
     - rvm: jruby-9.0.5.0
       gemfile: ci/rails-3.2.gemfile
-    - rvm: jruby-9.1.2.0
+    - rvm: jruby-9.1.8.0
       gemfile: ci/rails-3.2.gemfile
     - rvm: ree
       gemfile: ci/rails-4.0.gemfile
