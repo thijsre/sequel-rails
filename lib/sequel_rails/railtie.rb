@@ -75,7 +75,8 @@ module SequelRails
       if defined?(::Spring::Application)
         class ::Spring::Application # rubocop:disable Style/ClassAndModuleChildren
           include ::SequelRails::SpringSupport
-          alias_method_chain :disconnect_database, :sequel
+          alias_method :disconnect_database_without_sequel, :disconnect_database
+          alias_method :disconnect_database, :disconnect_database_with_sequel
         end
       end
     end
