@@ -19,7 +19,9 @@ platform :ruby do
   else
     gem 'pg'
   end
-  gem 'mysql'
+  if RUBY_VERSION < '2.4'
+    gem 'mysql'
+  end
   gem 'mysql2'
   gem 'sqlite3'
 end

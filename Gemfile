@@ -17,7 +17,9 @@ end
 # MRI/Rubinius Adapter Dependencies
 platform :ruby do
   gem 'pg'
-  gem 'mysql'
+  if RUBY_VERSION < '2.4'
+    gem 'mysql'
+  end
   gem 'mysql2'
   gem 'sqlite3'
 end

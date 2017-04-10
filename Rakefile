@@ -35,9 +35,11 @@ begin
     }
 
     configs.merge!(
-      'mysql2' => configs.fetch('mysql').merge(
-        'TEST_DATABASE' => 'sequel_rails_test_mysql2'
-      )
+      'mysql' => { 'TEST_ENCODING' => 'utf8', 'TEST_USERNAME' => 'root' }
+    ) if RUBY_VERSION < '2.4'
+
+    configs.merge!(
+      'mysql2' => { 'TEST_ENCODING' => 'utf8', 'TEST_USERNAME' => 'root', 'TEST_DATABASE' => 'sequel_rails_test_mysql2' }
     ) unless SequelRails.jruby?
 
     configs.each do |adapter, config|
