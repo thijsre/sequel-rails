@@ -12,7 +12,7 @@ rvm:
   - jruby-18mode
   - jruby-19mode
   - jruby-9.0.5.0
-  - jruby-9.1.2.0
+  - jruby-9.1.8.0
 before_script:
   - mysql -e 'create database sequel_rails_test;'
   - mysql -e 'create database sequel_rails_test_mysql2;'
@@ -67,6 +67,8 @@ matrix:
     - rvm: 2.0.0
       gemfile: ci/rails-5.0.gemfile
     - rvm: 2.1.10
+      gemfile: ci/rails-5.0.gemfile
+    - rvm: jruby-9.0.5.0
       gemfile: ci/rails-5.0.gemfile
     - gemfile: ci/rails-3.2.gemfile
       env: SEQUEL='~> 4.0'
