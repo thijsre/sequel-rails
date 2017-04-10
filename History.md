@@ -1,6 +1,8 @@
 dev
 ===
 
+* Remove `alias_method_chain` usage for Rails 5.1 compatibility (Mohammad Satrio)
+  [#132](https://github.com/TalentBox/sequel-rails/issues/132)
 * Fix string interpolation syntax in error message for db:migrate task (Henre Botha)
   [#133](https://github.com/TalentBox/sequel-rails/issues/133)
 

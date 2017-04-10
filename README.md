@@ -397,6 +397,7 @@ Improvements have been made by those awesome contributors:
 * Jordan Owens (@jkowens)
 * Pablo Herrero (@pabloh)
 * Henre Botha (@henrebotha)
+* Mohammad Satrio (@tyok)
 
 Credits
 =======
