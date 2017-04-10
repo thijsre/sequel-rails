@@ -27,6 +27,11 @@ gemfile:
   - ci/rails-4.2.gemfile
   - ci/rails-5.0.gemfile
 matrix:
+  allow_failures:
+    - rvm: jruby-9.0.5.0
+      gemfile: ci/rails-5.0.gemfile
+    - rvm: jruby-9.1.8.0
+      gemfile: ci/rails-5.0.gemfile
   exclude:
     - rvm: 2.2.4
       gemfile: ci/rails-3.2.gemfile
@@ -67,8 +72,6 @@ matrix:
     - rvm: 2.0.0
       gemfile: ci/rails-5.0.gemfile
     - rvm: 2.1.10
-      gemfile: ci/rails-5.0.gemfile
-    - rvm: jruby-9.0.5.0
       gemfile: ci/rails-5.0.gemfile
     - gemfile: ci/rails-3.2.gemfile
       env: SEQUEL='~> 4.0'
