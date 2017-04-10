@@ -16,7 +16,7 @@ if RUBY_VERSION < '1.9'
   gem 'rake', '< 11.0.0'
 end
 if RUBY_VERSION < '2.0'
-  gem "rack-cache", "< 1.3.0"
+  gem 'rack-cache', "< 1.3.0"
 end
 
 # MRI/Rubinius Adapter Dependencies
