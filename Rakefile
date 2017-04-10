@@ -30,7 +30,6 @@ begin
 
     configs = {
       'postgresql' => { 'TEST_ENCODING' => 'unicode' },
-      'mysql'      => { 'TEST_ENCODING' => 'utf8', 'TEST_USERNAME' => 'root' },
       'sqlite3'    => { 'TEST_DATABASE' => 'db/database.sqlite3' },
     }
 
