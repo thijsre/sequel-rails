@@ -1,5 +1,7 @@
-dev
-===
+0.9.15 (2017-04-11)
+===================
+
+** This will be the last version to support Ruby < 2.2 **
 
 * Remove `alias_method_chain` usage for Rails 5.1 compatibility (Mohammad Satrio)
   [#132](https://github.com/TalentBox/sequel-rails/issues/132)
