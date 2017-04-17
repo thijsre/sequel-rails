@@ -1,6 +1,8 @@
 dev
 ===
 
+* Drop CI testing with Rubies < 2.2 and Rails < 4.0, add Rails 5.1, and add
+  minimal Ruby (>= 2.2) and Rubygems (>= 1.8.11) version to gemspec
 * Fix arguments for the shell exec commands on windows (Gencer W. Genç)
   [#134](https://github.com/TalentBox/sequel-rails/pull/134)
 

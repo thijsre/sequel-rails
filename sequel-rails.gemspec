@@ -20,21 +20,12 @@ Gem::Specification.new do |s|
   s.rdoc_options = ['--charset=UTF-8']
   s.license = 'MIT'
 
-  if RUBY_VERSION < '1.9.3'
-    s.post_install_message = <<-NOTE
+  s.required_ruby_version = ">= 2.2.2"
+  s.required_rubygems_version = ">= 1.8.11"
 
-      !!! sequel-rails
-      NOTE: Support for Ruby < 1.9.3 (this is 1.8.x, 1.9.0, 1.9.2) in sequel-rails
-      is deprecated and will be dropped in the next major release. If you really
-      rely on it please complain at http://git.io/WgfgZQ to delay the inevitable.
-      !!!
-
-    NOTE
-  end
-
-  s.add_dependency 'activemodel'
-  s.add_dependency 'railties', '>= 3.2.0'
-  s.add_dependency 'actionpack', '>= 3.2.0'
+  s.add_dependency 'activemodel', '>= 4.0.0'
+  s.add_dependency 'railties', '>= 4.0.0'
+  s.add_dependency 'actionpack', '>= 4.0.0'
   s.add_dependency 'sequel', ['>= 3.28', '< 5.0']
 
   s.add_development_dependency 'combustion'
@@ -42,7 +33,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '>= 0.8.7', '< 11.0'
   s.add_development_dependency 'rspec', '~> 3.1'
   s.add_development_dependency 'rspec-rails', '~> 3.1', '< 3.3'
-  s.add_development_dependency 'rubocop', '~> 0.33.0' unless RUBY_VERSION < '1.9.2'
+  s.add_development_dependency 'rubocop', '~> 0.33.0'
   s.add_development_dependency 'ammeter', '1.1.3'
-  s.add_development_dependency 'test-unit' if RUBY_VERSION >= '2.2.0'
+  s.add_development_dependency 'test-unit'
 end

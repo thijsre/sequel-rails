@@ -5,14 +5,7 @@ gemspec
 gem 'actionpack'
 gem 'fakefs', '0.5.3', :require => 'fakefs/safe'
 
-if RUBY_VERSION < '1.9'
-  # why do we even care, it's deprecated
-  gem 'activesupport', '< 4'
-  gem 'pry', '< 0.10'
-  gem 'tzinfo'
-else
-  gem 'pry'
-end
+gem 'pry'
 
 # MRI/Rubinius Adapter Dependencies
 platform :ruby do

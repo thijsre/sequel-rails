@@ -8,17 +8,9 @@ gem 'sequel', "#{ENV['SEQUEL']}"
 
 gem 'fakefs', '0.5.3', :require => 'fakefs/safe'
 
-if RUBY_VERSION < '2.1'
-  gem 'nokogiri', '< 1.7.0'
-end
-
 # MRI/Rubinius Adapter Dependencies
 platform :ruby do
-  if RUBY_VERSION < '2.0'
-    gem 'pg', '~> 0.18.4'
-  else
-    gem 'pg'
-  end
+  gem 'pg'
   if RUBY_VERSION < '2.4'
     gem 'mysql'
   end

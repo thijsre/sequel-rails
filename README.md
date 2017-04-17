@@ -10,7 +10,7 @@
 
 This gem provides the railtie that allows
 [sequel](http://github.com/jeremyevans/sequel) to hook into
-[Rails (3.x, 4.x and 5.x)](http://github.com/rails/rails) and thus behave like a
+[Rails (4.x and 5.x)](http://github.com/rails/rails) and thus behave like a
 rails framework component. Just like activerecord does in rails,
 [sequel-rails](http://github.com/talentbox/sequel-rails) uses the railtie API to
 hook into rails. The two are actually hooked into rails almost identically.
@@ -28,8 +28,7 @@ Since January 2013, we've become the official maintainers of the gem after
 Using sequel-rails
 ==================
 
-Using sequel with Rails (3.x, 4.x or 5.x) requires a couple minor
-changes.
+Using sequel with Rails (4.x or 5.x) requires a couple minor changes.
 
 First, add the following to your Gemfile (after the `Rails` lines):
 
