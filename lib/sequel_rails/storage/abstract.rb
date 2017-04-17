@@ -127,7 +127,19 @@ module SequelRails
       end
 
       def safe_exec(args)
-        exec SequelRails::Shellwords.join(Array(args))
+        if not Gem.win_platform?
+          exec SequelRails::Shellwords.join(Array(args))
+        else
+          jarg = args.map do |arg|
+            str = arg.to_s
+            return "''" if str.empty?
+            str = str.dup
+            str.gsub!(%r{([^A-Za-z0-9_\-.,:/@\n])}, '\\1')
+            str.gsub!(/\n/, "'\n'")
+            str
+          end
+          exec jarg.join(' ')
+        end
       end
 
       def schema_information_inserts(migrator, sql_dump)
