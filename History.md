@@ -1,6 +1,8 @@
 dev
 ===
 
+* Better handling of missing database when using Postgresql (Steve Hoeksema)
+  [#140](https://github.com/TalentBox/sequel-rails/pull/140)
 * Bump version to 1.0.0.alpha
 * Drop CI testing with Rubies < 2.2 and Rails < 4.0, add Rails 5.1, and add
   minimal Ruby (>= 2.2) and Rubygems (>= 1.8.11) version to gemspec
