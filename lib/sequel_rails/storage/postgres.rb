@@ -65,6 +65,9 @@ module SequelRails
         # command. Seems to be only way to ensure *all* test connections
         # are closed
         nil
+      rescue Sequel::DatabaseConnectionError
+        # Will raise an error if the database doesn't exist.
+        nil
       end
 
       def encoding
