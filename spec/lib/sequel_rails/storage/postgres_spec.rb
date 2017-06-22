@@ -69,7 +69,7 @@ describe SequelRails::Storage::Postgres, :postgres do
   describe '#_drop' do
     it 'uses the dropdb command' do
       expect(subject).to receive(:`).with(
-        "dropdb --username\\=#{username} --host\\=#{host} --port\\=#{port} #{database}"
+        "dropdb --username\\=#{username} --host\\=#{host} --port\\=#{port} --if-exists #{database}"
       )
       subject._drop
     end

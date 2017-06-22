@@ -22,6 +22,7 @@ module SequelRails
         with_pgpassword do
           commands = ['dropdb']
           add_connection_settings commands
+          add_flag commands, '--if-exists'
           commands << database
           safe_exec commands
         end
@@ -64,6 +65,9 @@ module SequelRails
         # command. Seems to be only way to ensure *all* test connections
         # are closed
         nil
+      rescue Sequel::DatabaseConnectionError
+        # Will raise an error if the database doesn't exist.
+        nil
       end
 
       def encoding
@@ -104,9 +108,9 @@ module SequelRails
       end
 
       def add_connection_settings(commands)
-        add_option commands, '--username', username
-        add_option commands, '--host', host
-        add_option commands, '--port', port.to_s
+        add_option commands, '--username', username unless username.blank?
+        add_option commands, '--host', host unless host.blank?
+        add_option commands, '--port', port.to_s unless port.to_s.blank? || port.to_s == "0"
       end
     end
   end
