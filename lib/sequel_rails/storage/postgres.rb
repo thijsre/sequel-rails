@@ -22,6 +22,7 @@ module SequelRails
         with_pgpassword do
           commands = ['dropdb']
           add_connection_settings commands
+          add_flag commands, '--if-exists'
           commands << database
           safe_exec commands
         end
