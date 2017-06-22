@@ -1,5 +1,5 @@
-dev
-===
+0.9.16 (2017-06-22)
+===================
 
 * Better handling of missing database when using Postgresql (Steve Hoeksema)
   [#140](https://github.com/TalentBox/sequel-rails/pull/140)
