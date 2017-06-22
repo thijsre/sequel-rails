@@ -9,6 +9,12 @@ dev
 * Fix arguments for the shell exec commands on windows (Gencer W. Genç)
   [#134](https://github.com/TalentBox/sequel-rails/pull/134)
 
+0.9.16 (2017-06-22)
+===================
+
+* Better handling of missing database when using Postgresql (Steve Hoeksema)
+  [#140](https://github.com/TalentBox/sequel-rails/pull/140)
+
 0.9.15 (2017-04-11)
 ===================
 
