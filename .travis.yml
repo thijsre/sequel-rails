@@ -4,7 +4,7 @@ sudo: false
 rvm:
   - 2.2.6
   - 2.3.3
-  - 2.4.0
+  - 2.4.1
   - jruby-9.0.5.0
   - jruby-9.1.8.0
 before_script:
@@ -14,6 +14,7 @@ before_script:
 env:
   - SEQUEL='~> 3.0'
   - SEQUEL='~> 4.0'
+  - SEQUEL='~> 5.0'
 gemfile:
   - ci/rails-4.0.gemfile
   - ci/rails-4.1.gemfile

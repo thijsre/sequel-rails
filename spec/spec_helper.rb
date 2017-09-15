@@ -26,8 +26,10 @@ RSpec.configure do |config|
       :en,
       'sequel' => {
         'models' => {
-          'user' => 'translated user' }
-      })
+          'user' => 'translated user'
+        }
+      }
+    )
   end
 
   config.around :each do |example|

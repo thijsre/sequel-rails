@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 require 'sequel_rails/version'
@@ -20,20 +21,20 @@ Gem::Specification.new do |s|
   s.rdoc_options = ['--charset=UTF-8']
   s.license = 'MIT'
 
-  s.required_ruby_version = ">= 2.2.2"
-  s.required_rubygems_version = ">= 1.8.11"
+  s.required_ruby_version = '>= 2.2.2'
+  s.required_rubygems_version = '>= 1.8.11'
 
   s.add_dependency 'activemodel', '>= 4.0.0'
   s.add_dependency 'railties', '>= 4.0.0'
   s.add_dependency 'actionpack', '>= 4.0.0'
-  s.add_dependency 'sequel', ['>= 3.28', '< 5.0']
+  s.add_dependency 'sequel', ['>= 3.28', '<= 5.0']
 
   s.add_development_dependency 'combustion'
   s.add_development_dependency 'generator_spec'
-  s.add_development_dependency 'rake', '>= 0.8.7', '< 11.0'
+  s.add_development_dependency 'rake', '>= 0.8.7', '< 12.1'
   s.add_development_dependency 'rspec', '~> 3.1'
-  s.add_development_dependency 'rspec-rails', '~> 3.1', '< 3.3'
-  s.add_development_dependency 'rubocop', '~> 0.33.0'
-  s.add_development_dependency 'ammeter', '1.1.3'
+  s.add_development_dependency 'rspec-rails', '~> 3.1', '< 3.6'
+  s.add_development_dependency 'rubocop', '~> 0.50.0'
+  s.add_development_dependency 'ammeter', '1.1.4'
   s.add_development_dependency 'test-unit'
 end
