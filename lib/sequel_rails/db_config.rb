@@ -33,7 +33,7 @@ module SequelRails
     ADAPTER_MAPPING = {
       'sqlite3' => 'sqlite',
       'postgresql' => 'postgres'
-    }
+    }.freeze
 
     def normalize_adapter
       self[:adapter] = ADAPTER_MAPPING[adapter.to_s] || adapter.to_s
@@ -59,7 +59,7 @@ module SequelRails
         scheme, subadapter = adapter.split ':'
         URI::Generic.build(
           :scheme => scheme,
-          :opaque => build_url(to_hash.merge 'adapter' => subadapter).to_s
+          :opaque => build_url(to_hash.merge('adapter' => subadapter)).to_s
         )
       else
         build_url to_hash

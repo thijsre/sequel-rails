@@ -51,8 +51,6 @@ module SequelRails
       lookup_class(config['adapter']).new config
     end
 
-    private
-
     def self.parse_url(value)
       URI(value) if value.present?
     rescue ArgumentError
@@ -106,12 +104,12 @@ module SequelRails
     end
 
     def self.lookup_class(adapter)
-      fail 'Adapter not specified in config, please set the :adapter key.' unless adapter
+      raise 'Adapter not specified in config, please set the :adapter key.' unless adapter
       return Jdbc if adapter =~ /jdbc/
 
       klass_name = adapter.camelize.to_sym
       unless self.const_defined?(klass_name)
-        fail "Adapter #{adapter} not supported (#{klass_name.inspect})"
+        raise "Adapter #{adapter} not supported (#{klass_name.inspect})"
       end
 
       const_get klass_name

@@ -17,6 +17,13 @@ module Sequel
         )
       end
 
+      # Implement the required interface for Rails::Generators::Migration.
+      #
+      def self.next_migration_number(dirname) #:nodoc:
+        next_migration_number = current_migration_number(dirname) + 1
+        [Time.now.utc.strftime('%Y%m%d%H%M%S'), format('%.14d', next_migration_number)].max
+      end
+
       protected
 
       # Sequel does not care if migrations have the same name as long as
@@ -24,13 +31,6 @@ module Sequel
       #
       def migration_exists?(_dirname, _file_name) #:nodoc:
         false
-      end
-
-      # Implement the required interface for Rails::Generators::Migration.
-      #
-      def self.next_migration_number(dirname) #:nodoc:
-        next_migration_number = current_migration_number(dirname) + 1
-        [Time.now.utc.strftime('%Y%m%d%H%M%S'), format('%.14d', next_migration_number)].max
       end
     end
 

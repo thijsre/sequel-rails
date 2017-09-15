@@ -12,10 +12,11 @@ module Sequel
       class_option :parent,     :type => :string, :desc => 'The parent class for the generated model'
 
       def create_migration_file
+        return unless options[:migration]
         migration_template(
           'migration.rb.erb',
           File.join('db', 'migrate', "create_#{table_name}.rb")
-        ) if options[:migration]
+        )
       end
 
       def create_model_file
