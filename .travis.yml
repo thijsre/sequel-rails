@@ -2,11 +2,10 @@ language: ruby
 cache: bundler
 sudo: false
 rvm:
-  - 2.2.6
-  - 2.3.3
+  - 2.2.7
+  - 2.3.4
   - 2.4.1
-  - jruby-9.0.5.0
-  - jruby-9.1.8.0
+  - jruby-9.1.13.0
 before_script:
   - mysql -e 'create database sequel_rails_test;'
   - mysql -e 'create database sequel_rails_test_mysql2;'
@@ -23,11 +22,9 @@ gemfile:
   - ci/rails-5.1.gemfile
 matrix:
   allow_failures:
-    - rvm: jruby-9.0.5.0
+    - rvm: jruby-9.1.13.0
       gemfile: ci/rails-5.0.gemfile
-    - rvm: jruby-9.1.8.0
-      gemfile: ci/rails-5.0.gemfile
-    - gemfile: ci/rails-5.1.gemfile
+      gemfile: ci/rails-5.1.gemfile
   exclude:
     - rvm: 2.4.0
       gemfile: ci/rails-4.0.gemfile
