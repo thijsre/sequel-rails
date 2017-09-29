@@ -10,7 +10,9 @@ rvm:
 before_script:
   - mysql -e 'create database sequel_rails_test;'
   - mysql -e 'create database sequel_rails_test_mysql2;'
-  - psql -c 'create database sequel_rails_test;' -U postgres
+  - mysql -e 'create database sequel_rails_test_storage_dev;'
+  - psql  -c 'create database sequel_rails_test_storage_dev;' -U postgres
+  - psql  -c 'create database sequel_rails_test;' -U postgres
 env:
   - SEQUEL='~> 3.0'
   - SEQUEL='~> 4.0'
