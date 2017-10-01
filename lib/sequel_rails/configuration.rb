@@ -49,8 +49,8 @@ module SequelRails
     def connect(environment)
       normalized_config = environment_for environment
 
-      unless (normalized_config.keys & %w(adapter url)).any?
-        fail "Database not configured.\n" \
+      unless (normalized_config.keys & %w[adapter url]).any?
+        raise "Database not configured.\n" \
             'Please create config/database.yml or set DATABASE_URL in environment.'
       end
 
@@ -64,7 +64,7 @@ module SequelRails
     private
 
     def default_schema_dump
-      !%w(test production).include? Rails.env
+      !%w[test production].include? Rails.env
     end
 
     def normalize_repository_config(hash)
