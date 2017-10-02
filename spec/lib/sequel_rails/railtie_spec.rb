@@ -94,7 +94,6 @@ describe SequelRails::Railtie do
     context 'and DATABASE_URL is defined' do
       let :database_url do
         cfg = Combustion::Application.config.database_configuration['test']
-        cfg['database'] = Rails.root.join(cfg['database']).to_s
         SequelRails::DbConfig.new(cfg).url
       end
 
