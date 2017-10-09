@@ -1,6 +1,8 @@
 dev
 ===
 
+* Support for Sequel ~> 5.0 (@Jesterovskiy and @ckoenig)
+  [#143](https://github.com/TalentBox/sequel-rails/pull/143)
 * Better handling of missing database when using Postgresql (Steve Hoeksema)
   [#140](https://github.com/TalentBox/sequel-rails/pull/140)
 * Bump version to 1.0.0.alpha
