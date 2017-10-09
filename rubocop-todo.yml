@@ -23,7 +23,10 @@ LineLength:
 MethodLength:
   Enabled: false
 
-TrailingComma:
+TrailingCommaInLiteral:
+  Enabled: false
+
+TrailingCommaInArguments:
   Enabled: false
 
 Metrics/AbcSize:

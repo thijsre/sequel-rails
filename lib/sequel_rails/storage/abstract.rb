@@ -80,13 +80,13 @@ module SequelRails
         if inserts.any?
           res = inserts.join("\n")
           unless sql_dump
-            res = <<-EOS.strip_heredoc
+            res = <<-RUBY.strip_heredoc
               Sequel.migration do
                 change do
                   #{res}
                 end
               end
-            EOS
+            RUBY
           end
         end
         res
@@ -127,7 +127,7 @@ module SequelRails
       end
 
       def safe_exec(args)
-        if not Gem.win_platform?
+        if !Gem.win_platform?
           exec SequelRails::Shellwords.join(Array(args))
         else
           jarg = args.map do |arg|
@@ -158,14 +158,14 @@ module SequelRails
           if sql_dump
             res = "#{set_search_path_sql};\n#{res}"
           else
-            res = <<-EOS.strip_heredoc
+            res = <<-RUBY.strip_heredoc
               Sequel.migration do
                 change do
                   self << #{set_search_path_sql.inspect}
                   #{res}
                 end
               end
-            EOS
+            RUBY
           end
         end
         res

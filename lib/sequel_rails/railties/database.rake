@@ -145,7 +145,7 @@ namespace sequel_rails_namespace do
     desc 'Runs the "up" for a given migration VERSION.'
     task :up => :load do
       version = ENV['VERSION'] ? ENV['VERSION'].to_i : nil
-      fail 'VERSION is required' unless version
+      raise 'VERSION is required' unless version
       SequelRails::Migrations.migrate_up!(version)
       Rake::Task["#{sequel_rails_namespace}:dump"].invoke if SequelRails.configuration.schema_dump
     end
@@ -153,7 +153,7 @@ namespace sequel_rails_namespace do
     desc 'Runs the "down" for a given migration VERSION.'
     task :down => :load do
       version = ENV['VERSION'] ? ENV['VERSION'].to_i : nil
-      fail 'VERSION is required' unless version
+      raise 'VERSION is required' unless version
       SequelRails::Migrations.migrate_down!(version)
       Rake::Task["#{sequel_rails_namespace}:dump"].invoke if SequelRails.configuration.schema_dump
     end

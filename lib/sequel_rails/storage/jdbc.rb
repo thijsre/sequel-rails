@@ -58,7 +58,7 @@ module SequelRails
           adapter = ::SequelRails::Storage::Postgres.new(config)
           adapter._dump(filename)
         else
-          fail NotImplementedError
+          raise NotImplementedError
         end
       end
 
@@ -67,7 +67,7 @@ module SequelRails
           adapter = ::SequelRails::Storage::Postgres.new(config)
           adapter._load(filename)
         else
-          fail NotImplementedError
+          raise NotImplementedError
         end
       end
 

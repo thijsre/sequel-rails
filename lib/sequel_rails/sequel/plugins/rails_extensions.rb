@@ -25,7 +25,7 @@ module Sequel
       module ClassMethods
         def find!(args)
           m = self[args]
-          fail ModelNotFound, "Couldn't find #{self} matching #{args}." unless m
+          raise ModelNotFound, "Couldn't find #{self} matching #{args}." unless m
           m
         end
       end

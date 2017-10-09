@@ -30,7 +30,7 @@ begin
 
     configs = {
       'postgresql' => { 'TEST_ENCODING' => 'unicode' },
-      'sqlite3'    => { 'TEST_DATABASE' => 'db/database.sqlite3' },
+      'sqlite3'    => { 'TEST_DATABASE' => File.join(File.expand_path('.'), 'spec/internal/db/database.sqlite3') },
     }
 
     configs.merge!(

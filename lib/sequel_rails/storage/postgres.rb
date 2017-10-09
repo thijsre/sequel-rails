@@ -110,7 +110,7 @@ module SequelRails
       def add_connection_settings(commands)
         add_option commands, '--username', username unless username.blank?
         add_option commands, '--host', host unless host.blank?
-        add_option commands, '--port', port.to_s unless port.to_s.blank? || port.to_s == "0"
+        add_option commands, '--port', port.to_s unless port.to_s.blank? || port.to_s == '0'
       end
     end
   end

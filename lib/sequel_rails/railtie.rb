@@ -39,10 +39,10 @@ module SequelRails
     rake_tasks do |app|
       load_tasks_config = app.config.sequel.load_database_tasks
       SequelRails::TASK_NAMESPACE =
-      case load_tasks_config
-      when Symbol, String then load_tasks_config.to_sym
-      else :db
-      end
+        case load_tasks_config
+        when Symbol, String then load_tasks_config.to_sym
+        else :db
+        end
       load 'sequel_rails/railties/database.rake' if load_tasks_config
     end
 
