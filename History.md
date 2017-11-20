@@ -1,5 +1,5 @@
-dev
-===
+1.0.0 (2017-11-20)
+==================
 
 * Support for Sequel ~> 5.0 (@Jesterovskiy and @ckoenig)
   [#143](https://github.com/TalentBox/sequel-rails/pull/143)
