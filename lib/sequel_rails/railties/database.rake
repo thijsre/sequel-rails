@@ -231,7 +231,7 @@ namespace :railties do
         puts "Copied migration #{migration.basename} from #{name}"
       end
 
-      Sequel::Migrations.copy(SequelRails::Migrations.migrations_dir, railties,
+      SequelRails::Migrations.copy(SequelRails::Migrations.migrations_dir, railties,
                               on_skip: on_skip, on_copy: on_copy)
     end
   end

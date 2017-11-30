@@ -67,10 +67,10 @@ module SequelRails
 
         FileUtils.mkdir_p(destination) unless File.exist?(destination)
 
-        destination_migrations = ActiveRecord::Migrator.migrations(destination)
+        destination_migrations = ::Sequel::Migrator.migrations(destination)
         last = destination_migrations.last
         sources.each do |scope, path|
-          source_migrations = ActiveRecord::Migrator.migrations(path)
+          source_migrations = ::Sequel::Migrator.migrations(path)
 
           source_migrations.each do |migration|
             source = File.binread(migration.filename)
