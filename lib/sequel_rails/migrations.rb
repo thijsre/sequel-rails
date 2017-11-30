@@ -86,7 +86,7 @@ module SequelRails
             end
 
             if duplicate = destination_migrations.detect { |m| File.basename(m) == File.basename(migration) }
-              if options[:on_skip] && duplicate.scope != scope.to_s
+              if options[:on_skip]
                 options[:on_skip].call(scope, migration)
               end
               next
