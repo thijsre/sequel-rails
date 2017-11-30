@@ -73,8 +73,8 @@ module SequelRails
           source_migrations = Dir["#{path}/*.rb"]
 
           source_migrations.each do |migration|
-            source = File.binread(migration.filename)
-            inserted_comment = "# This migration comes from #{scope} (originally #{migration.version})\n"
+            source = File.binread(migration)
+            inserted_comment = "# This migration comes from #{scope} (originally #{File.basename(migration)})\n"
             if /\A#.*\b(?:en)?coding:\s*\S+/ =~ source
               # If we have a magic comment in the original migration,
               # insert our comment after the first newline(end of the magic comment line)
@@ -85,19 +85,18 @@ module SequelRails
               source = "#{inserted_comment}#{source}"
             end
 
-            if duplicate = destination_migrations.detect { |m| m.name == migration.name }
+            if duplicate = destination_migrations.detect { |m| File.basename(m) == File.basename(migration) }
               if options[:on_skip] && duplicate.scope != scope.to_s
                 options[:on_skip].call(scope, migration)
               end
               next
             end
 
-            migration.version = next_migration_number(last ? last.version + 1 : 0).to_i
-            new_path = File.join(destination, "#{migration.version}_#{migration.name.underscore}.#{scope}.rb")
-            old_path, migration.filename = migration.filename, new_path
+            new_path = File.join(destination, File.basename(migration))
+            old_path = migration
             last = migration
 
-            File.binwrite(migration.filename, source)
+            File.binwrite(new_path, source)
             copied << migration
             options[:on_copy].call(scope, migration, old_path) if options[:on_copy]
             destination_migrations << migration
