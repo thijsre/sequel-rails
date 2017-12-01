@@ -224,11 +224,11 @@ namespace :railties do
       end
 
       on_skip = Proc.new do |name, migration|
-        puts "NOTE: Migration #{migration.basename} from #{name} has been skipped. Migration with the same name already exists."
+        puts "NOTE: Migration #{File.basename(migration)} from #{name} has been skipped. Migration with the same name already exists."
       end
 
       on_copy = Proc.new do |name, migration|
-        puts "Copied migration #{migration.basename} from #{name}"
+        puts "Copied migration #{File.basename(migration)} from #{name}"
       end
 
       SequelRails::Migrations.copy(SequelRails::Migrations.migrations_dir, railties,
